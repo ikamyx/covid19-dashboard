@@ -1,0 +1,164 @@
+html, body{
+    min-height: 100%
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    transition: all 0.5s ease-out;
+    background: #dd3b3d;
+    height: 100%;
+}
+
+body.selected {
+    background: #751314;
+}
+
+svg.map {
+    margin-top: 50px;
+}
+
+svg{
+    max-width: 960px;
+    width: 100%;
+    margin: auto auto;
+    /* margin-top: 50px; */
+    position: relative;
+    left: 0;
+    transition: 0.1s all ease-out;
+}
+
+svg.side {
+    left: 16%;
+}
+
+svg path {
+    cursor: pointer;
+}
+
+.slider {
+    position: absolute;
+    /* border: 1px solid #AAB; */
+    background: #721f1f;
+    height: 100%;
+    width: 58px;
+    top: 0px;
+    cursor: move;
+    /*margin:-0.5px;*/
+}
+
+.slider .handle {
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    /* border: 1px solid #AAB; */
+    background: #721f1f;
+
+    /* Support for bootstrap */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.slider .EE {
+    right: -4px;
+    cursor: e-resize;
+}
+
+.slider .WW {
+    cursor: w-resize;
+    left: -4px;
+}
+
+.slider .EE, .slider .WW {
+    top: 50%;
+    margin-top: -4px;
+}
+
+.play-container .button{
+    fill-opacity: 0.0;
+    stroke: #AAB;
+    stroke-width: 1.6;
+}
+
+.play-container .play, .play-container .stop {
+    fill: #BCE;
+    stroke: #AAB;
+    stroke-width: 1;
+}
+
+.slider-container {
+    position: relative;
+    top: 30px;
+    margin: auto auto;
+    width: 70%;
+    height: 15px !important;
+    border-radius: 5px;
+    background-color: #a53b3b;
+}
+
+aside {
+    width: 600px;
+    position: absolute;
+    top: 0;
+    left: -600px;
+    /* top: 50%;
+    left: -600px;
+    transform: translateY(-50%); */
+    z-index: 1;
+    transition: 0.1s all ease-out;
+    transition-delay: 0.05s;
+}
+
+aside.show {
+    left: 0;
+}
+
+#wafflechart, #small_multiples, #state_name {
+    color: #ffecec;
+    font-family: "trebuchet ms";
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: rgba(0,0,0,0.2);
+    padding: 20px;
+}
+
+#state_name {
+    font-size: 30px;
+    padding: 10px;
+}
+
+
+
+/**************************/
+
+#states {
+    fill: #481414;
+}
+  
+#states .active {
+    fill: orange;
+}
+  
+#state-borders {
+    fill: none;
+    stroke: #dd3b3d;
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+}
+
+#states.active ~ #state-borders {
+    stroke: #751314;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+  }
